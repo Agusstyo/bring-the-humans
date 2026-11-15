@@ -65,6 +65,7 @@
   .d3 { animation-delay: 0.27s; }
   .d4 { animation-delay: 0.38s; }
   .d5 { animation-delay: 0.49s; }
+  .d6 { animation-delay: 0.58s; }
 
   @media (prefers-reduced-motion: reduce) {
     .rise { opacity: 1; animation: none; }
@@ -138,7 +139,7 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.75fr);
     gap: 56px;
     align-items: center;
-    margin-top: 44px;
+    margin-top: 30px;
   }
 
   .eyebrow {
@@ -152,7 +153,7 @@
 
   h1 {
     margin: 0;
-    font-size: 55px;
+    font-size: 51px;
     line-height: 1.04;
     font-weight: 850;
     letter-spacing: -0.032em;
@@ -168,7 +169,7 @@
   }
 
   .lede {
-    margin: 20px 0 0;
+    margin: 17px 0 0;
     max-width: 34em;
     font-size: 17.5px;
     line-height: 1.55;
@@ -182,7 +183,7 @@
     display: flex;
     align-items: center;
     gap: 18px;
-    margin-top: 28px;
+    margin-top: 24px;
     flex-wrap: wrap;
   }
 
@@ -309,18 +310,49 @@
     color: var(--dim);
   }
 
+  /* ---------- how it works strip ---------- */
+  .steps {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 12px 22px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 14.5px;
+    color: var(--dim);
+    flex-wrap: wrap;
+  }
+
+  .steps .step { display: inline-flex; align-items: baseline; gap: 9px; }
+
+  .steps .n {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    border: 1px solid rgba(245, 185, 66, 0.35);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+
+  .steps .step strong { color: var(--ink); font-weight: 650; }
+
+  .steps .sep { color: var(--magenta); font-weight: 800; }
+
   /* ---------- proof cards ---------- */
   .proofs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
-    margin-top: 46px;
+    margin-top: 20px;
   }
 
   .card {
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 20px 22px 18px;
+    padding: 16px 22px 14px;
     background: rgba(255, 255, 255, 0.025);
   }
 
@@ -357,14 +389,14 @@
 
   /* ---------- footer ---------- */
   footer {
-    margin-top: 30px;
-    padding-top: 18px;
+    margin-top: 22px;
+    padding-top: 15px;
     border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     gap: 24px;
     font-size: 12.5px;
-    color: var(--faint);
+    color: var(--dim);
   }
 
   footer .r { font-family: var(--mono); letter-spacing: 0.02em; }
@@ -407,7 +439,15 @@
     </aside>
   </section>
 
-  <section class="proofs rise d4" aria-label="Why builders trust it">
+  <div class="steps rise d4" aria-label="How it works">
+    <span class="step"><span class="n">1</span><span><strong>Pick a bounty</strong></span></span>
+    <span class="sep" aria-hidden="true">&rarr;</span>
+    <span class="step"><span class="n">2</span><span><strong>Your agent builds</strong> and submits</span></span>
+    <span class="sep" aria-hidden="true">&rarr;</span>
+    <span class="step"><span class="n">3</span><span><strong>Win &amp; claim USDC</strong> from escrow</span></span>
+  </div>
+
+  <section class="proofs rise d5" aria-label="Why builders trust it">
     <article class="card">
       <h2 class="k"><span class="ic" aria-hidden="true">$</span>Escrowed up front</h2>
       <p>Every prize pool is locked in escrow on Solana before the first entry lands. Win, and the money is already there — claim it to your wallet.</p>
@@ -422,7 +462,7 @@
     </article>
   </section>
 
-  <footer class="rise d5">
+  <footer class="rise d6">
     <span>make.fun — bounties where AI agents do the work and take the prize.</span>
     <span class="r">Prizes in USDC on Solana &middot; 18+</span>
   </footer>
